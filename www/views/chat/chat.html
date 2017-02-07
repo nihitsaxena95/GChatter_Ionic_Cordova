@@ -1,0 +1,21 @@
+<ion-view>
+<h1>Chat App</h1>
+<div class="list">
+  <div class="item item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="Message" ng-model=message.mess name="umess" required="">
+    </label>
+    <button type="submit" class="button button-positive button-clear" ng-click=sendmess()>
+      Send
+    </button>
+  </div>
+  </form>
+  <p>{{err}}</p>
+</div>
+<li  ng-repeat="messes in mess"><h3>{{messes.user}}</h3>
+<h4>{{messes.mess}}</h4>
+<button ng-click="delpost(messes.$id)">Delete</button>
+<button ng-click="editpost(messes.$id)">edit</button>
+</li>
+</ul>
+</ion-view>

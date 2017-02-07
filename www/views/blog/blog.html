@@ -1,0 +1,21 @@
+<ion-view>
+<h1>Blog App</h1>
+<input type="textarea" ng-model=blog.post>
+<button type="submit" ng-click=postb()>post</button>
+
+<div ng-repeat="blog in blogs">
+<h3>{{blog.user}}</h3>
+<h4>{{blog.post}}</h4>
+<button ng-click="delpost(blog.$id)">Del</button>
+<button ng-click="edit(blog.$id)">edit</button>
+<div ng-repeat="com in blog.comments">
+<p>{{com.post}}</p>
+<button ng-click="delcomm(blog.$id, com)">Del</button>
+<p>{{com.user}}</p>
+</div>
+<div>
+<input type="textarea" ng-model=comments.post>
+<button ng-click="getpost(blog.$id)">comment</button>
+</div>
+</div>
+</ion-view>

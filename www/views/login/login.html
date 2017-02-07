@@ -1,0 +1,30 @@
+<ion-view title="login">
+<div style="padding: 10px;">
+<div class="list list-inset">
+  <label class="item item-input">
+    <input type="text" placeholder="Enter User Email" ng-model="user.username">
+  </label>
+  <br>
+  <label class="item item-input">
+    <input type="password" placeholder="Enter Password" ng-model="user.password">
+  </label>
+</div>
+<button class="button button-block button-positive" ng-click="submit($event)">Login</button>
+<center>
+<p>{{mess}}</p>
+
+<button class="button button-clear button-positive" ng-click="facebook($event)">
+  Signin with Facebook
+</button>
+<br>
+<button class="button button-clear button-positive" ng-click="gmail($event)">
+  Signin with Google
+</button>
+<br>
+<h3>Not Registered?<br>Register from free..</h3>
+<button class="button button-clear button-positive" ng-click="newuse()">
+  Register
+</button>
+</center>
+</div>
+</ion-view>

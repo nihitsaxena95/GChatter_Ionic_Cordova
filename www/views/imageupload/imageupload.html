@@ -1,0 +1,30 @@
+<ion-view title="My Images" >
+	<div>
+	<input type="textarea" ng-model=imgdata.caption>
+        <button class="button button-icon icon ion-camera" ng-click="uploadGallery()"></button>
+		<br>
+        <button class="button button-icon icon ion-camera" ng-click="uploadCamera()"></button>
+		<button ng-click="post()">Post</button>
+        </div>
+		<div class="row" ng-repeat="image in images">
+		<div>
+		<p>{{image.user}}</p>
+		<p>{{image.date}}</p>
+		<p>{{image.loc}}</p>
+		<p>{{image.caption}}</p>
+		<button ng-click="delpost(image.$id)">DElete</button>
+		</div>
+           <div style="width:200px;height:200px" >
+               <img ng-src="data:image/jpeg;base64,{{image.image}}" width="100%" />
+			   
+            </div>
+			<div ng-repeat="com in image.comments">
+			<p>{{com.post}}</p>
+			<p>{{com.user}}</p>
+			</div>
+			<div>
+			<input type="textarea" ng-model=comments.post>
+			<button ng-click="getpost(image.$id)">comment</button>
+			</div>
+        </div>
+</ion-view>
